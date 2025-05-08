@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daiane e Júlia</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: black;
+      color: white;
+      text-align: center;
+    }
+
+    .spotify {
+      margin-top: 20px;
+    }
+
+    .texto {
+      margin: 40px 20px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .contador {
+      font-size: 20px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .carrossel {
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 40px 0;
+      position: relative;
+    }
+
+    .carrossel-track {
+      display: inline-block;
+      animation: rolar 40s linear infinite;
+    }
+
+    .carrossel img {
+      width: 300px;
+      height: auto;
+      margin: 0 10px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    @keyframes rolar {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 16px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Música no topo -->
+  <div class="spotify">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1DLKuppSYytOuxhtI6KBGu?utm_source=generator&theme=0" width="80%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+
+  <!-- Texto romântico -->
+  <div class="texto">
+    <p>Eu te amo. E não é pouco, é muito. Um amor que não cabe direito nas palavras, mas que se sente em cada detalhe, em cada pensamento, em cada plano do meu dia que te inclui.</p>
+    <p>Você é uma das pessoas mais importantes da minha vida, e eu sou imensamente grata por tudo o que você é e faz por mim. Pela paciência, pelo carinho, pelos momentos bons e até pelos difíceis, por não desistir de mim, por me fazer sentir amada, por ser minha paz em meio ao caos, por cada vez que ficou quando poderia ter ido.</p>
+    <p>Você é meu refúgio, meu abraço preferido, minha melhor parte.</p>
+    <p>Te amo mais do que consigo explicar.</p>
+  </div>
+
+  <!-- Contador -->
+  <div class="contador" id="contador"></div>
+
+  <!-- Galeria com rolagem automática -->
+  <div class="carrossel">
+    <div class="carrossel-track">
+      <img src="foto1.jpg" alt="Foto 1">
+      <img src="foto2.jpg" alt="Foto 2">
+      <img src="foto3.jpg" alt="Foto 3">
+      <img src="foto4.jpg" alt="Foto 4">
+      <img src="foto5.jpg" alt="Foto 5">
+      <img src="foto6.jpg" alt="Foto 6">
+      <img src="foto7.jpg" alt="Foto 7">
+      <img src="foto8.jpg" alt="Foto 8">
+      <!-- duplicar para efeito contínuo -->
+      <img src="foto1.jpg" alt="Foto 1">
+      <img src="foto2.jpg" alt="Foto 2">
+      <img src="foto3.jpg" alt="Foto 3">
+      <img src="foto4.jpg" alt="Foto 4">
+      <img src="foto5.jpg" alt="Foto 5">
+      <img src="foto6.jpg" alt="Foto 6">
+      <img src="foto7.jpg" alt="Foto 7">
+      <img src="foto8.jpg" alt="Foto 8">
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    O amor da minha vida
+  </footer>
+
+  <!-- Script do contador -->
+  <script>
+    const dataInicio = new Date("2023-06-05T00:00:00");
+    function atualizarContador() {
+      const agora = new Date();
+      const diferenca = agora - dataInicio;
+      const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
+      document.getElementById("contador").innerText =
+        `Te amo há ${dias} dias, ${horas} horas e ${minutos} minutos`;
+    }
+    atualizarContador();
+    setInterval(atualizarContador, 60000);
+  </script>
+
+</body>
+</html>
